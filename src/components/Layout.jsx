@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
+import banlogicLogo from '../assets/favicons/banlogic_logo.png'
 
 export default function Layout({ children }) {
   const location = useLocation()
@@ -15,7 +16,8 @@ export default function Layout({ children }) {
       <nav className="layout-nav">
         <div className="nav-inner">
           <Link to="/" className="nav-logo">
-            Portfolio
+            <img src={banlogicLogo} alt="banlogic logo" className="nav-logo-mark" />
+            <span className="nav-logo-text">banlogic</span>
           </Link>
           <div className="nav-links">
             {navLinks.map(({ to, label }) => (

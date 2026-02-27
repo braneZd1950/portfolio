@@ -1,14 +1,15 @@
 /* ===== CSS varijable ===== */
 :root {
-  --color-bg: #f8f7f4;
-  --color-bg-elevated: #f5f6f3;
-  --color-bg-nav: rgba(245, 247, 242, 0.92);
-  --color-text: #2d2a26;
-  --color-text-muted: #6b6560;
-  --color-accent: #4a7c59;
-  --color-accent-soft: #e8f0ea;
-  --color-border: #e4e6e0;
-  --color-focus: #4a7c59;
+  /* banlogic paleta */
+  --color-bg: #0a1f44; /* Dark */
+  --color-bg-elevated: #0f3d91; /* Primary */
+  --color-bg-nav: rgba(10, 31, 68, 0.94);
+  --color-text: #e6edf3; /* Light text */
+  --color-text-muted: #b8c4d5;
+  --color-accent: #1ca7ec; /* Accent */
+  --color-accent-soft: rgba(34, 211, 238, 0.12);
+  --color-border: #1f3b6c;
+  --color-focus: #22d3ee;
 
   --font-sans: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
 
@@ -59,9 +60,9 @@ body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(74, 124, 89, 0.06), transparent),
-    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(74, 124, 89, 0.04), transparent);
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(15, 61, 145, 0.35), transparent),
+    radial-gradient(ellipse 60% 40% at 100% 100%, rgba(28, 167, 236, 0.22), transparent);
   pointer-events: none;
   z-index: 0;
 }
@@ -127,15 +128,34 @@ a:focus-visible {
 }
 
 .nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
   font-weight: 700;
   font-size: 1.15rem;
   color: var(--color-text);
   letter-spacing: -0.03em;
-  transition: color var(--transition);
+  transition: color var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+.nav-logo-mark {
+  width: 72px;
+  height: 72px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(34, 211, 238, 0.28);
+  object-fit: cover;
+  object-position: 100%;
+  display: block;
+}
+
+.nav-logo-text {
+  display: inline-block;
 }
 
 .nav-logo:hover {
   color: var(--color-accent);
+  opacity: 0.95;
+  transform: translateY(-1px);
 }
 
 .nav-links {
