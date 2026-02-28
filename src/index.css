@@ -128,6 +128,12 @@ a:focus-visible {
   gap: var(--space-lg);
 }
 
+.nav-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
 .nav-logo {
   display: inline-flex;
   align-items: center;
@@ -137,6 +143,14 @@ a:focus-visible {
   color: var(--color-text);
   letter-spacing: -0.03em;
   transition: color var(--transition), opacity var(--transition), transform var(--transition);
+}
+
+.nav-lang.nav-lang-mobile {
+  display: none;
+}
+
+.nav-lang.nav-lang-desktop {
+  display: flex;
 }
 
 .nav-logo-mark {
@@ -189,10 +203,13 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: 0;
-  margin-left: var(--space-sm);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   overflow: hidden;
+}
+
+.nav-lang-desktop {
+  margin-left: var(--space-sm);
 }
 
 .nav-lang-btn {
@@ -226,6 +243,19 @@ a:focus-visible {
     align-items: flex-start;
   }
 
+  .nav-logo-wrap {
+    width: 100%;
+  }
+
+  .nav-lang.nav-lang-mobile {
+    display: flex;
+    margin-left: auto;
+  }
+
+  .nav-lang.nav-lang-desktop {
+    display: none;
+  }
+
   .nav-links {
     width: 100%;
     justify-content: flex-start;
@@ -237,10 +267,6 @@ a:focus-visible {
     padding: var(--space-sm) var(--space-md);
     font-size: 0.85rem;
     white-space: nowrap;
-  }
-
-  .nav-lang {
-    margin-left: auto;
   }
 }
 

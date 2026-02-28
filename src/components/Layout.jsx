@@ -17,10 +17,30 @@ export default function Layout({ children }) {
     <>
       <nav className="layout-nav">
         <div className="nav-inner">
-          <Link to="/" className="nav-logo">
-            <img src={banlogicLogo} alt="banlogic logo" className="nav-logo-mark" />
-            <span className="nav-logo-text">banlogic</span>
-          </Link>
+          <div className="nav-logo-wrap">
+            <Link to="/" className="nav-logo">
+              <img src={banlogicLogo} alt="banlogic logo" className="nav-logo-mark" />
+              <span className="nav-logo-text">banlogic</span>
+            </Link>
+            <div className="nav-lang nav-lang-mobile" aria-label={t('nav.ariaLang')}>
+              <button
+                type="button"
+                className={`nav-lang-btn ${lang === 'hr' ? 'active' : ''}`}
+                onClick={() => setLang('hr')}
+                aria-pressed={lang === 'hr'}
+              >
+                HR
+              </button>
+              <button
+                type="button"
+                className={`nav-lang-btn ${lang === 'en' ? 'active' : ''}`}
+                onClick={() => setLang('en')}
+                aria-pressed={lang === 'en'}
+              >
+                EN
+              </button>
+            </div>
+          </div>
           <div className="nav-links">
             {navLinks.map(({ to, label }) => (
               <Link
@@ -31,7 +51,7 @@ export default function Layout({ children }) {
                 {label}
               </Link>
             ))}
-            <div className="nav-lang" aria-label={t('nav.ariaLang')}>
+            <div className="nav-lang nav-lang-desktop" aria-label={t('nav.ariaLang')}>
               <button
                 type="button"
                 className={`nav-lang-btn ${lang === 'hr' ? 'active' : ''}`}
