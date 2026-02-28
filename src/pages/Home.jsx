@@ -1,22 +1,13 @@
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../context/LanguageContext'
+import './Home.scss'
 
 export default function Home() {
+  const { t } = useLanguage()
   const offers = [
-    {
-      icon: '⚡',
-      title: 'Brzina i performanse',
-      description: 'Web stranice i aplikacije optimizirane za brzo učitavanje i ugodno korisničko iskustvo.',
-    },
-    {
-      icon: '📱',
-      title: 'Responzivni dizajn',
-      description: 'Prilagođeno za mobitele, tablete i računala.',
-    },
-    {
-      icon: '🔧',
-      title: 'Moderna tehnologija',
-      description: 'Razvoj u Reactu i MERN stacku za fleksibilnost i buduće nadogradnje.',
-    },
+    { icon: '⚡', titleKey: 'home.offer1Title', descKey: 'home.offer1Desc' },
+    { icon: '📱', titleKey: 'home.offer2Title', descKey: 'home.offer2Desc' },
+    { icon: '🔧', titleKey: 'home.offer3Title', descKey: 'home.offer3Desc' },
   ]
 
   return (
@@ -28,64 +19,42 @@ export default function Home() {
         <div className="home-bg-blob home-bg-blob-3" />
       </div>
       <div className="page-container page-home-content">
-        {/* 1. HERO SEKCIJA */}
         <section className="hero">
-          <h1 className="hero-title">
-            Pozdrav, ja sam Branimir Ban.
-          </h1>
-          <p className="hero-lead">
-            Razvijam moderne web stranice i web aplikacije koristeći React i MERN stack, s fokusom na brzinu, funkcionalnost i jednostavno korisničko iskustvo.
-          </p>
+          <h1 className="hero-title">{t('home.heroTitle')}</h1>
+          <p className="hero-lead">{t('home.heroLead')}</p>
           <div className="hero-ctas">
-            <Link to="/projects" className="hero-cta">
-              👉 Pogledaj projekte
-            </Link>
-            <Link to="/contact" className="hero-cta hero-cta-secondary">
-              👉 Kontaktiraj me
-            </Link>
+            <Link to="/projects" className="hero-cta">{t('home.ctaProjects')}</Link>
+            <Link to="/contact" className="hero-cta hero-cta-secondary">{t('home.ctaContact')}</Link>
           </div>
         </section>
 
-        {/* 2. KRATKO O MENI */}
         <section className="home-about page-section">
-          <h2 className="home-section-title">Tko sam i što radim</h2>
-          <p className="home-about-lead">
-            Web developmentom se bavim s ciljem stvaranja jednostavnih, brzih i pouzdanih digitalnih rješenja. Fokusiran sam na čisti kod, dobre performanse i projekte koji mogu rasti s vremenom.
-          </p>
-          <p className="home-about-tech">
-            Radim s tehnologijama poput:
-          </p>
-          <p className="home-about-stack">
-            React • Node.js • MongoDB • Express • REST API
-          </p>
-          <p className="home-about-closing">
-            Otvoren sam za manje i srednje projekte te suradnje u razvoju web aplikacija.
-          </p>
+          <h2 className="home-section-title">{t('home.sectionWho')}</h2>
+          <p className="home-about-lead">{t('home.aboutLead')}</p>
+          <p className="home-about-tech">{t('home.aboutTech')}</p>
+          <p className="home-about-stack">{t('home.aboutStack')}</p>
+          <p className="home-about-closing">{t('home.aboutClosing')}</p>
         </section>
 
-        {/* 3. ŠTO NUDIM */}
         <section className="home-offer page-section">
-          <h2 className="home-section-title">Što nudim</h2>
+          <h2 className="home-section-title">{t('home.sectionOffer')}</h2>
           <div className="home-offer-grid">
             {offers.map((item) => (
-              <div key={item.title} className="home-offer-card">
+              <div key={item.titleKey} className="home-offer-card">
                 <span className="home-offer-icon" aria-hidden="true">{item.icon}</span>
-                <h3 className="home-offer-title">{item.title}</h3>
-                <p className="home-offer-desc">{item.description}</p>
+                <h3 className="home-offer-title">{t(item.titleKey)}</h3>
+                <p className="home-offer-desc">{t(item.descKey)}</p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* 4. CTA PRIJE PROJEKATA */}
         <section className="home-cta page-section">
           <p className="home-cta-text">
-            Imate ideju ili projekt u planu?<br />
-            Slobodno se javite — rado ću saslušati i predložiti rješenje.
+            {t('home.ctaText')}<br />
+            {t('home.ctaText2')}
           </p>
-          <Link to="/contact" className="hero-cta">
-            👉 Kontaktiraj me
-          </Link>
+          <Link to="/contact" className="hero-cta">{t('home.ctaContact')}</Link>
         </section>
       </div>
     </div>

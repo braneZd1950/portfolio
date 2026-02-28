@@ -1,0 +1,271 @@
+/* ===== Home – stranica ===== */
+.page-home {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.home-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.home-bg-gradient {
+  position: absolute;
+  inset: -50%;
+  background:
+    radial-gradient(ellipse 90% 70% at 30% 20%, rgba(15, 61, 145, 0.35), transparent 50%),
+    radial-gradient(ellipse 80% 60% at 70% 80%, rgba(28, 167, 236, 0.22), transparent 50%),
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(34, 211, 238, 0.06), transparent 55%);
+  animation: home-gradient-shift 18s ease-in-out infinite;
+}
+
+.home-bg-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  will-change: transform;
+}
+
+.home-bg-blob-1 {
+  width: min(70vw, 400px);
+  height: min(70vw, 400px);
+  background: var(--color-accent);
+  top: -15%;
+  left: -10%;
+  animation: home-blob-float 22s ease-in-out infinite;
+}
+
+.home-bg-blob-2 {
+  width: min(50vw, 280px);
+  height: min(50vw, 280px);
+  background: var(--color-accent);
+  bottom: -10%;
+  right: -5%;
+  animation: home-blob-float 26s ease-in-out infinite reverse;
+  animation-delay: -8s;
+}
+
+.home-bg-blob-3 {
+  width: min(40vw, 220px);
+  height: min(40vw, 220px);
+  background: rgba(34, 211, 238, 0.15);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: home-blob-float 20s ease-in-out infinite;
+  animation-delay: -4s;
+}
+
+@keyframes home-gradient-shift {
+  0%, 100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.1) rotate(2deg); }
+}
+
+@keyframes home-blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(4%, -6%) scale(1.06); }
+  66% { transform: translate(-5%, 5%) scale(0.96); }
+}
+
+.home-bg-blob-3 {
+  animation-name: home-blob-float-center;
+}
+
+@keyframes home-blob-float-center {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); }
+  33% { transform: translate(calc(-50% + 3%), calc(-50% - 5%)) scale(1.06); }
+  66% { transform: translate(calc(-50% - 4%), calc(-50% + 4%)) scale(0.96); }
+}
+
+.page-home-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hero */
+.hero {
+  padding: var(--space-3xl) 0;
+  text-align: left;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-lg);
+  letter-spacing: 0.02em;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--color-text-muted);
+  max-width: 44ch;
+  margin-bottom: var(--space-md);
+}
+
+.hero-text {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  margin-bottom: var(--space-xl);
+  line-height: 1.65;
+}
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-accent);
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-accent-soft);
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.hero-cta:hover {
+  background: var(--color-accent);
+  color: var(--color-bg-elevated);
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.hero-cta-secondary:hover {
+  background: var(--color-bg);
+  border-color: var(--color-text-muted);
+  color: var(--color-text);
+}
+
+/* Kratko o meni */
+.home-section-title {
+  font-size: clamp(1.35rem, 3vw, 1.6rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: var(--space-lg);
+  line-height: 1.3;
+}
+
+.home-about-lead {
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  margin-bottom: var(--space-md);
+  line-height: 1.65;
+}
+
+.home-about-tech {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-xs);
+  font-size: 0.95rem;
+}
+
+.home-about-stack {
+  color: var(--color-accent);
+  font-weight: 500;
+  margin-bottom: var(--space-lg);
+  font-size: 0.95rem;
+}
+
+.home-about-closing {
+  color: var(--color-text-muted);
+  max-width: 55ch;
+  line-height: 1.65;
+}
+
+/* Što nudim */
+.home-offer-grid {
+  display: grid;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+@media (min-width: 640px) {
+  .home-offer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-offer-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+
+.home-offer-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent-soft);
+}
+
+.home-offer-icon {
+  display: block;
+  font-size: 1.75rem;
+  margin-bottom: var(--space-md);
+  line-height: 1;
+}
+
+.home-offer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: var(--space-sm);
+}
+
+.home-offer-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+}
+
+/* CTA prije projekata */
+.home-cta {
+  text-align: center;
+  padding: var(--space-3xl) var(--space-lg);
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.home-cta-text {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  max-width: 42ch;
+  margin: 0 auto var(--space-xl);
+  line-height: 1.6;
+}
+
+.home-cta .hero-cta {
+  margin: 0 auto;
+}

@@ -1,11 +1,14 @@
 import { useInView } from '../hooks/useInView'
+import { useLanguage } from '../context/LanguageContext'
+import './About.scss'
 
 export default function About() {
+  const { t } = useLanguage()
   const expectations = [
-    'Jasnu komunikaciju',
-    'Realna očekivanja i pošten pristup',
-    'Fokus na funkcionalnost i stabilnost',
-    'Spremnost na prilagodbu projektu',
+    t('about.expect1'),
+    t('about.expect2'),
+    t('about.expect3'),
+    t('about.expect4'),
   ]
 
   const [heroRef, heroInView] = useInView()
@@ -13,7 +16,7 @@ export default function About() {
   const [card2Ref, card2InView] = useInView()
   const [card3Ref, card3InView] = useInView()
   const [closingRef, closingInView] = useInView()
-  const [noteRef, noteInView] = useInView()
+  const [noteRef, noteInView] = useInView({ rootMargin: '0px 0px -5% 0px' })
 
   return (
     <div className="page-about">
@@ -24,33 +27,27 @@ export default function About() {
       </div>
       <div className="page-container page-about-content">
         <header ref={heroRef} className={`about-hero ${heroInView ? 'about-in-view' : ''}`}>
-          <h1 className="page-title">O meni</h1>
-          <p className="about-hero-lead">Tko sam, kako radim i što možete očekivati od suradnje.</p>
+          <h1 className="page-title">{t('about.title')}</h1>
+          <p className="about-hero-lead">{t('about.heroLead')}</p>
         </header>
 
         <div ref={card1Ref} className={`about-card ${card1InView ? 'about-in-view' : ''}`}>
-          <h2 className="about-heading">Tko sam</h2>
-          <p className="about-intro">
-            Dolazim iz drugačijeg profesionalnog okruženja, ali sam kroz samostalno učenje i predan rad izgradio znanje u području web developmenta.
-            Programiranje mi je postalo više od hobija — postalo je smjer u kojem želim graditi svoju budućnost.
-            Specijaliziran sam za razvoj modernih web aplikacija i poslovnih web stranica koristeći React i MERN stack.
-          </p>
+          <h2 className="about-heading">{t('about.whoHeading')}</h2>
+          <p className="about-intro">{t('about.intro')}</p>
         </div>
 
         <div ref={card2Ref} className={`about-card ${card2InView ? 'about-in-view' : ''}`}>
-          <h2 className="about-heading">Kako radim</h2>
-          <p className="about-text">
-            U radu se vodim jednostavnim principima:
-          </p>
+          <h2 className="about-heading">{t('about.howHeading')}</h2>
+          <p className="about-text">{t('about.howIntro')}</p>
           <ul className="about-list about-list-bullet">
-            <li>čist i organiziran kod, dobra struktura projekta i optimizirane performanse.</li>
-            <li>Koristim React i MERN stack (MongoDB, Express, React, Node.js) za izradu skalabilnih web rješenja koja se mogu nadograđivati i razvijati s vremenom.</li>
-            <li>Kontinuirano učim i unapređujem svoje znanje kako bih mogao ponuditi moderna i pouzdana rješenja.</li>
+            <li>{t('about.how1')}</li>
+            <li>{t('about.how2')}</li>
+            <li>{t('about.how3')}</li>
           </ul>
         </div>
 
         <div ref={card3Ref} className={`about-card ${card3InView ? 'about-in-view' : ''}`}>
-          <h2 className="about-heading">Što možete očekivati</h2>
+          <h2 className="about-heading">{t('about.expectHeading')}</h2>
           <div className="about-expectations-grid">
             {expectations.map((item) => (
               <div key={item} className="about-expectation-item">
@@ -62,13 +59,11 @@ export default function About() {
         </div>
 
         <p ref={closingRef} className={`about-closing ${closingInView ? 'about-in-view' : ''}`}>
-          Otvoren sam za freelance suradnje, manje i srednje projekte te dugoročnu suradnju na razvoju web aplikacija.
+          {t('about.closing')}
         </p>
 
         <div ref={noteRef} className={`about-note ${noteInView ? 'about-in-view' : ''}`}>
-          <p>
-            Volim raditi na projektima koji imaju stvarnu svrhu i pomažu ljudima ili poslovanju. Svaki projekt doživljavam kao priliku za rast – i tehnički i profesionalno.
-          </p>
+          <p>{t('about.note')}</p>
         </div>
       </div>
     </div>

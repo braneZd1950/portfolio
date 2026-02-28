@@ -1,16 +1,18 @@
 import { useInView } from '../hooks/useInView'
-
-const linkeyFeatures = [
-  'Registracija i prijava korisnika',
-  'Kreiranje profila pružatelja usluga',
-  'Pretraživanje prema kategorijama',
-  'Strukturirana baza podataka',
-  'Responzivan dizajn za mobilne uređaje',
-]
-
-const linkeyTech = ['React', 'Node.js', 'Express', 'MongoDB']
+import { useLanguage } from '../context/LanguageContext'
+import './Projects.scss'
 
 export default function Projects() {
+  const { t } = useLanguage()
+  const linkeyFeatures = [
+    t('projects.feature1'),
+    t('projects.feature2'),
+    t('projects.feature3'),
+    t('projects.feature4'),
+    t('projects.feature5'),
+  ]
+  const linkeyTech = ['React', 'Node.js', 'Express', 'MongoDB']
+
   const [heroRef, heroInView] = useInView()
   const [projectRef, projectInView] = useInView()
 
@@ -23,10 +25,8 @@ export default function Projects() {
       </div>
       <div className="page-container page-projects-content">
         <header ref={heroRef} className={`projects-hero ${heroInView ? 'about-in-view' : ''}`}>
-          <h1 className="page-title">Projekti</h1>
-          <p className="projects-hero-lead">
-            Izdvojeni projekt
-          </p>
+          <h1 className="page-title">{t('projects.title')}</h1>
+          <p className="projects-hero-lead">{t('projects.heroLead')}</p>
         </header>
 
         <article
@@ -34,10 +34,8 @@ export default function Projects() {
           className={`project-featured ${projectInView ? 'about-in-view' : ''}`}
         >
           <div className="project-featured-header">
-            <h2 className="project-featured-title">Link-ey</h2>
-            <p className="project-featured-subtitle">
-              Platforma za povezivanje korisnika i pružatelja usluga
-            </p>
+            <h2 className="project-featured-title">{t('projects.linkeyTitle')}</h2>
+            <p className="project-featured-subtitle">{t('projects.linkeySubtitle')}</p>
             <a
               href="https://link-ey.com"
               target="_blank"
@@ -49,17 +47,13 @@ export default function Projects() {
           </div>
 
           <section className="project-featured-section">
-            <h3 className="project-featured-heading">O projektu</h3>
-            <p>
-              Link-ey je web aplikacija osmišljena za jednostavno povezivanje osoba koje traže usluge s onima koji ih nude. Cilj aplikacije je pojednostaviti pronalazak pouzdanih pružatelja usluga kroz pregledne kategorije i jednostavno korisničko sučelje.
-            </p>
-            <p>
-              Projekt je razvijen kao full-stack aplikacija s naglaskom na funkcionalnost, preglednost i buduću mogućnost nadogradnje.
-            </p>
+            <h3 className="project-featured-heading">{t('projects.aboutHeading')}</h3>
+            <p>{t('projects.about1')}</p>
+            <p>{t('projects.about2')}</p>
           </section>
 
           <section className="project-featured-section">
-            <h3 className="project-featured-heading">Ključne funkcionalnosti</h3>
+            <h3 className="project-featured-heading">{t('projects.featuresHeading')}</h3>
             <ul className="project-featured-list">
               {linkeyFeatures.map((item) => (
                 <li key={item}>
@@ -71,27 +65,21 @@ export default function Projects() {
           </section>
 
           <section className="project-featured-section">
-            <h3 className="project-featured-heading">Tehnologije</h3>
-            <p className="project-featured-tech">
-              {linkeyTech.join(' · ')}
-            </p>
-            <p className="project-featured-tech-note">
-              Aplikacija je razvijena koristeći MERN stack arhitekturu.
-            </p>
+            <h3 className="project-featured-heading">{t('projects.techHeading')}</h3>
+            <p className="project-featured-tech">{linkeyTech.join(' · ')}</p>
+            <p className="project-featured-tech-note">{t('projects.techNote')}</p>
           </section>
 
           <section className="project-featured-section">
-            <h3 className="project-featured-heading">Cilj projekta</h3>
-            <p>
-              Cilj razvoja bio je izgraditi funkcionalnu web aplikaciju koja može služiti kao temelj za daljnje širenje i dodavanje novih mogućnosti.
-            </p>
+            <h3 className="project-featured-heading">{t('projects.goalHeading')}</h3>
+            <p>{t('projects.goalText')}</p>
             <a
               href="https://link-ey.com"
               target="_blank"
               rel="noopener noreferrer"
               className="project-featured-cta"
             >
-              👉 Pogledaj aplikaciju
+              {t('projects.ctaApp')}
             </a>
           </section>
         </article>

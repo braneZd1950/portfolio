@@ -1,14 +1,16 @@
 import { Link, useLocation } from 'react-router-dom'
 import banlogicLogo from '../assets/favicons/banlogic_logo.png'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Layout({ children }) {
   const location = useLocation()
+  const { lang, setLang, t } = useLanguage()
 
   const navLinks = [
-    { to: '/', label: 'Početna' },
-    { to: '/about', label: 'O meni' },
-    { to: '/projects', label: 'Projekti' },
-    { to: '/contact', label: 'Kontakt' },
+    { to: '/', label: t('nav.home') },
+    { to: '/about', label: t('nav.about') },
+    { to: '/projects', label: t('nav.projects') },
+    { to: '/contact', label: t('nav.contact') },
   ]
 
   return (
@@ -29,6 +31,24 @@ export default function Layout({ children }) {
                 {label}
               </Link>
             ))}
+            <div className="nav-lang" aria-label={t('nav.ariaLang')}>
+              <button
+                type="button"
+                className={`nav-lang-btn ${lang === 'hr' ? 'active' : ''}`}
+                onClick={() => setLang('hr')}
+                aria-pressed={lang === 'hr'}
+              >
+                HR
+              </button>
+              <button
+                type="button"
+                className={`nav-lang-btn ${lang === 'en' ? 'active' : ''}`}
+                onClick={() => setLang('en')}
+                aria-pressed={lang === 'en'}
+              >
+                EN
+              </button>
+            </div>
           </div>
         </div>
       </nav>
