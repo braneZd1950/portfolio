@@ -10,6 +10,7 @@ export default function Layout({ children }) {
     { to: '/', label: t('nav.home') },
     { to: '/about', label: t('nav.about') },
     { to: '/projects', label: t('nav.projects') },
+    { to: '/templates', label: t('nav.templates') },
     { to: '/contact', label: t('nav.contact') },
   ]
 
