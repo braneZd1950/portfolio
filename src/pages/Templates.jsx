@@ -32,7 +32,23 @@ export default function Templates() {
           <h2 className="templates-section-title">{t('templates.listHeading')}</h2>
           <div className="templates-grid">
             {cards.map(({ key }) => (
-              <article key={key} className="template-card">
+              <article key={key} className={`template-card template-card--${key}`}>
+                <div className="template-preview" aria-hidden="true">
+                  <div className="template-preview__chrome">
+                    <span className="template-preview__dot" />
+                    <span className="template-preview__dot" />
+                    <span className="template-preview__dot" />
+                  </div>
+                  <div className="template-preview__screen">
+                    <div className="template-preview__hero" />
+                    <div className="template-preview__body">
+                      <div className="template-preview__block template-preview__block--1" />
+                      <div className="template-preview__block template-preview__block--2" />
+                      <div className="template-preview__block template-preview__block--3" />
+                    </div>
+                    <div className="template-preview__cta" />
+                  </div>
+                </div>
                 <h3 className="template-card-title">{t(`templates.${key}Title`)}</h3>
                 <p className="template-card-desc">{t(`templates.${key}Desc`)}</p>
                 <p className="template-card-best-for">{t(`templates.${key}BestFor`)}</p>
