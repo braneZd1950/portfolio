@@ -1,7 +1,7 @@
 export default {
   nav: {
     home: 'Početna',
-    about: 'O meni',
+    about: 'O\u00a0meni',
     projects: 'Projekti',
     templates: 'Predlošci',
     contact: 'Kontakt',
@@ -103,5 +103,120 @@ export default {
     bottomNote: 'Sve predloške je moguće mijenjati po želji — boje, tipografiju, raspored sekcija i sadržaj. Cilj je da zajedno pronađemo strukturu koja najbolje odgovara vašoj ideji.',
     ctaPrimary: '👉 Želim predložak prilagođen meni',
     ctaSecondary: '👉 Pogledaj kontakt',
+  },
+  footer: {
+    legalTitle: 'Pravno',
+    terms: 'Uvjeti korištenja',
+    privacy: 'Politika privatnosti',
+  },
+  legal: {
+    terms: {
+      title: 'Uvjeti korištenja web stranice banlogic.com',
+      updated: 'Zadnje ažuriranje: veljača 2026.',
+      intro: 'Korištenjem ove web stranice (u nastavku: „Stranica”) potvrđujete da ste pročitali, razumjeli i prihvatili ove Uvjete korištenja. Ako se ne slažete s uvjetima, molimo vas da ne koristite Stranicu.',
+      section1Title: '1. Opći podaci o vlasniku stranice',
+      section1p1:
+        'Vlasnik i urednik ove Stranice je Branimir Ban (u nastavku: „Vlasnik”). Stranica služi za predstavljanje usluga i portfolija iz područja web developmenta.',
+      section1p2:
+        'Za sva pitanja vezana uz Stranicu možete se obratiti putem e-pošte na adresu: banbranimir@outlook.com.',
+      section2Title: '2. Prihvaćanje uvjeta korištenja',
+      section2p1:
+        'Pristupom i korištenjem Stranice prihvaćate ove Uvjete korištenja i slažete se da ćete Stranicu koristiti isključivo u skladu s važećim propisima Republike Hrvatske i Europske unije te u skladu s dobrim poslovnim običajima.',
+      section3Title: '3. Sadržaj na stranici',
+      section3p1:
+        'Sav sadržaj na Stranici, uključujući tekstove, opise usluga, primjere projekata i druge informacije, informativnog je karaktera i ne predstavlja obvezujuću ponudu u smislu Zakona o obveznim odnosima.',
+      section3p2:
+        'Vlasnik nastoji osigurati da su informacije na Stranici točne i ažurne, ali ne jamči potpunu točnost, pouzdanost ili potpunost svih informacija te ne preuzima odgovornost za eventualne pogreške ili propuste.',
+      section4Title: '4. Intelektualno vlasništvo',
+      section4p1:
+        'Dizajn Stranice, struktura, tekstovi, vizualni elementi i drugi sadržaji zaštićeni su autorskim pravom i/ili drugim pravima intelektualnog vlasništva.',
+      section4p2:
+        'Nije dopušteno kopirati, reproducirati, mijenjati, distribuirati ili na drugi način koristiti sadržaj Stranice u komercijalne svrhe bez prethodne izričite pisane suglasnosti Vlasnika.',
+      section5Title: '5. Ograničenje odgovornosti',
+      section5p1:
+        'Stranicu koristite na vlastitu odgovornost. Vlasnik ne odgovara za izravnu ili neizravnu štetu koja može nastati korištenjem ili nemogućnošću korištenja Stranice, uključujući štetu uzrokovanu netočnim informacijama, prekidima rada, tehničkim poteškoćama ili sličnim okolnostima.',
+      section5p2:
+        'Vlasnik ne preuzima odgovornost za odluke ili radnje koje poduzmete na temelju informacija objavljenih na Stranici.',
+      section6Title: '6. Poveznice na vanjske stranice',
+      section6p1:
+        'Stranica može sadržavati poveznice na vanjske web stranice ili usluge trećih strana. Takve stranice imaju vlastite uvjete korištenja i politike privatnosti nad kojima Vlasnik nema kontrolu.',
+      section6p2:
+        'Vlasnik ne odgovara za sadržaj, točnost, sigurnost ili prakse privatnosti bilo koje vanjske stranice ili usluge treće strane.',
+      section7Title: '7. Izmjene stranice i uvjeta',
+      section7p1:
+        'Vlasnik zadržava pravo u svakom trenutku izmijeniti sadržaj Stranice, kao i ove Uvjete korištenja, bez prethodne najave.',
+      section7p2:
+        'Ažurirana verzija Uvjeta bit će objavljena na Stranici s naznačenim datumom zadnjeg ažuriranja. Preporučujemo da povremeno provjerite ovu stranicu kako biste bili informirani o eventualnim promjenama.',
+      section8Title: '8. Mjerodavno pravo',
+      section8p1:
+        'Za tumačenje i primjenu ovih Uvjeta korištenja mjerodavno je pravo Republike Hrvatske. Za sve sporove koji mogu proizaći iz korištenja Stranice nadležni su sudovi u Republici Hrvatskoj.',
+    },
+    privacy: {
+      title: 'Politika privatnosti i zaštita osobnih podataka',
+      updated: 'Zadnje ažuriranje: veljača 2026.',
+      disclaimer:
+        'Ova Politika privatnosti odnosi se na osobnu web stranicu fizičke osobe. Stranica je namijenjena prezentaciji portfolija i usluga, a svako obraćanje putem e-pošte dobrovoljno je i na vlastitu inicijativu osobe koja me želi kontaktirati. Nastojim postupati u skladu s važećim propisima Republike Hrvatske i Europske unije o zaštiti podataka.',
+      section1Title: '1. Voditelj obrade',
+      section1p1:
+        'Voditelj obrade osobnih podataka prikupljenih putem ove Stranice je Branimir Ban (u nastavku: „Voditelj obrade”).',
+      section1p2:
+        'Za sva pitanja u vezi obrade osobnih podataka ili ostvarivanja vaših prava možete se obratiti putem e-pošte: banbranimir@outlook.com.',
+      section2Title: '2. Koje podatke prikupljam',
+      section2p1:
+        'Kroz kontakt putem e-pošte ili kontakt obrasca (ako je dostupan) mogu se prikupljati sljedeće kategorije osobnih podataka:',
+      section2p1List1: 'ime i prezime (ako ga navedete),',
+      section2p1List2: 'adresa e-pošte,',
+      section2p1List3: 'sadržaj poruke i druge informacije koje dobrovoljno navedete (npr. naziv tvrtke, telefon).',
+      section2p2:
+        'Prilikom posjete Stranici mogu se automatski prikupljati ograničeni tehnički podaci, kao što su IP adresa, datum i vrijeme pristupa te informacije o pregledniku, isključivo radi tehničkog održavanja i sigurnosti Stranice.',
+      section3Title: '3. Svrha i pravna osnova obrade',
+      section3p1:
+        'Osobne podatke obrađujem kako bih odgovorio na vaše upite, pripremio potencijalnu suradnju ili pružio tražene informacije o uslugama.',
+      section3p2:
+        'Pravna osnova obrade je legitimni interes Voditelja obrade (članak 6. stavak 1. točka (f) GDPR-a) za komunikaciju s potencijalnim klijentima, odnosno poduzimanje radnji na zahtjev ispitanika prije sklapanja ugovora (članak 6. stavak 1. točka (b) GDPR-a).',
+      section3p3:
+        'U slučaju da je obrada nužna radi poštivanja zakonskih obveza (npr. računovodstveni propisi), pravna osnova je ispunjavanje pravnih obveza Voditelja obrade (članak 6. stavak 1. točka (c) GDPR-a).',
+      section4Title: '4. Rok čuvanja podataka',
+      section4p1:
+        'Osobni podaci čuvaju se onoliko dugo koliko je potrebno za ispunjenje svrhe zbog koje su prikupljeni ili koliko to zahtijevaju važeći zakonski propisi.',
+      section4p2:
+        'Komunikacija putem e-pošte i podaci vezani uz upite potencijalnih klijenata u pravilu se čuvaju do 12 mjeseci od zadnje komunikacije, osim ako ne dođe do suradnje ili zakonska obveza nalaže dulje čuvanje.',
+      section5Title: '5. Dijeljenje podataka s trećim stranama',
+      section5p1:
+        'Osobni podaci mogu se podijeliti s pouzdanim pružateljima usluga (npr. pružatelj hosting usluga, pružatelj e-mail servisa) samo u mjeri u kojoj je to nužno za funkcioniranje Stranice i komunikaciju.',
+      section5p2:
+        'Svi takvi pružatelji usluga ugovorno su obvezani čuvati povjerljivost podataka i postupati u skladu s GDPR-om.',
+      section5p3:
+        'Osobni podaci se ne prodaju niti se koriste za neprimjereni marketing i ne prenose se u treće zemlje izvan Europskog gospodarskog prostora bez adekvatne razine zaštite.',
+      section6Title: '6. Kolačići (cookies) i analitika',
+      section6p1:
+        'Stranica može koristiti tehničke kolačiće koji su nužni za ispravan rad i prikaz sadržaja. Ti kolačići ne prikupljaju osobne podatke u smislu identifikacije korisnika.',
+      section6p2:
+        'Trenutno se ne koriste analitički ili marketinški kolačići trećih strana (poput Google Analyticsa) za praćenje ponašanja korisnika u marketinške svrhe.',
+      section7Title: '7. Vaša prava kao ispitanika',
+      section7p1:
+        'U skladu s Općom uredbom o zaštiti podataka (GDPR), imate sljedeća prava u vezi svojih osobnih podataka:',
+      section7p1List1: 'pravo na pristup podacima,',
+      section7p1List2: 'pravo na ispravak netočnih ili nepotpunih podataka,',
+      section7p1List3: 'pravo na brisanje („pravo na zaborav”) u određenim slučajevima,',
+      section7p1List4: 'pravo na ograničenje obrade,',
+      section7p1List5: 'pravo na prenosivost podataka,',
+      section7p1List6: 'pravo na prigovor na obradu koja se temelji na legitimnom interesu.',
+      section7p2:
+        'Svoja prava možete ostvariti slanjem zahtjeva na adresu e-pošte: banbranimir@outlook.com. Odgovorit ću u skladu s GDPR-om i primjenjivim propisima.',
+      section8Title: '8. Pravo na pritužbu nadzornom tijelu',
+      section8p1:
+        'Ako smatrate da je obrada vaših osobnih podataka protivna odredbama GDPR-a, imate pravo podnijeti pritužbu nadležnom nadzornom tijelu.',
+      section8p2:
+        'Nadzorno tijelo u Republici Hrvatskoj je Agencija za zaštitu osobnih podataka (AZOP) – Martićeva 14, 10000 Zagreb, www.azop.hr.',
+      section9Title: '9. Sigurnost podataka',
+      section9p1:
+        'Poduzimaju se razumne tehničke i organizacijske mjere kako bi se zaštitili osobni podaci od neovlaštenog pristupa, gubitka, zlouporabe ili uništenja. Ipak, nijedan sustav prijenosa ili pohrane podataka ne može biti u potpunosti siguran.',
+      section10Title: '10. Izmjene politike privatnosti',
+      section10p1:
+        'Voditelj obrade zadržava pravo izmijeniti ovu Politiku privatnosti kada je to potrebno, primjerice zbog promjena u načinu rada Stranice ili izmjena zakonskog okvira.',
+      section10p2:
+        'Ažurirana verzija Politike privatnosti bit će objavljena na Stranici s naznačenim datumom zadnjeg ažuriranja. Preporučujemo da povremeno provjerite ovu stranicu kako biste bili informirani o eventualnim promjenama.',
+    },
   },
 }

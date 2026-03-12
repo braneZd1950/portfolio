@@ -5,6 +5,8 @@ import About from './pages/About'
 import Projects from './pages/Projects'
 import Templates from './pages/Templates'
 import Contact from './pages/Contact'
+import Terms from './pages/Terms'
+import Privacy from './pages/Privacy'
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/projects" element={<Projects />} />
         <Route path="/templates" element={<Templates />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Layout>
   )

@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom'
+import { useInView } from '../hooks/useInView'
 import { useLanguage } from '../context/LanguageContext'
 import './Templates.scss'
 
 export default function Templates() {
   const { t } = useLanguage()
+  const [listRef, listInView] = useInView({ once: true, rootMargin: '0px 0px -10% 0px' })
+  const [bottomRef, bottomInView] = useInView({ once: true, rootMargin: '0px 0px -5% 0px' })
 
   const cards = [
     { key: 'saas' },
@@ -28,11 +31,18 @@ export default function Templates() {
           <p className="templates-hero-intro">{t('templates.intro')}</p>
         </header>
 
-        <section className="page-section">
+        <section
+          ref={listRef}
+          className={`page-section templates-list ${listInView ? 'templates-in-view' : ''}`}
+        >
           <h2 className="templates-section-title">{t('templates.listHeading')}</h2>
           <div className="templates-grid">
-            {cards.map(({ key }) => (
-              <article key={key} className={`template-card template-card--${key}`}>
+            {cards.map(({ key }, index) => (
+              <article
+                key={key}
+                className={`template-card template-card--${key}`}
+                style={{ '--template-card-index': index }}
+              >
                 <div className="template-preview" aria-hidden="true">
                   <div className="template-preview__chrome">
                     <span className="template-preview__dot" />
@@ -58,7 +68,10 @@ export default function Templates() {
           </div>
         </section>
 
-        <section className="page-section templates-bottom">
+        <section
+          ref={bottomRef}
+          className={`page-section templates-bottom ${bottomInView ? 'templates-bottom-in-view' : ''}`}
+        >
           <p className="templates-note">{t('templates.bottomNote')}</p>
           <div className="templates-ctas">
             <Link to="/contact" className="hero-cta">

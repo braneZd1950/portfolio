@@ -74,6 +74,35 @@ export default function Layout({ children }) {
         </div>
       </nav>
       <main className="layout-main">{children}</main>
+      <footer className="layout-footer">
+        <div className="page-container layout-footer-inner">
+          <div className="layout-footer-left">
+            <span className="layout-footer-brand">banlogic</span>
+            <span className="layout-footer-copy">© {new Date().getFullYear()} Branimir Ban</span>
+          </div>
+          <div className="layout-footer-right">
+            <a href="mailto:banbranimir@outlook.com">banbranimir@outlook.com</a>
+            <a
+              href="https://www.linkedin.com/in/branimirban"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </div>
+        </div>
+        <div className="page-container layout-footer-legal">
+          <div className="layout-footer-legal-links">
+            <Link to="/terms" className="layout-footer-legal-link">
+              {t('footer.terms')}
+            </Link>
+            <span className="layout-footer-legal-separator">·</span>
+            <Link to="/privacy" className="layout-footer-legal-link">
+              {t('footer.privacy')}
+            </Link>
+          </div>
+        </div>
+      </footer>
     </>
   )
 }

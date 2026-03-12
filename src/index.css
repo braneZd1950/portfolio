@@ -118,13 +118,95 @@ a:focus-visible {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
+.layout-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--color-border);
+  background: radial-gradient(circle at top, rgba(28, 167, 236, 0.08), transparent),
+    rgba(5, 14, 32, 0.96);
+}
+
+.layout-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.layout-footer-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.layout-footer-brand {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  color: var(--color-text);
+}
+
+.layout-footer-copy {
+  opacity: 0.8;
+}
+
+.layout-footer-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.layout-footer-right a {
+  color: var(--color-text-muted);
+}
+
+.layout-footer-right a:hover {
+  color: var(--color-accent);
+}
+
+.layout-footer-legal {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-xs);
+  padding-top: 0;
+  padding-bottom: var(--space-md);
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.layout-footer-legal-link {
+  color: var(--color-text-muted);
+}
+
+.layout-footer-legal-link:hover {
+  color: var(--color-accent);
+}
+
+.layout-footer-legal-separator {
+  opacity: 0.6;
+}
+
+@media (max-width: 640px) {
+  .layout-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .layout-footer-legal {
+    justify-content: flex-start;
+  }
+}
+
 .nav-inner {
   max-width: 720px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: var(--space-lg);
 }
 
@@ -132,6 +214,7 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  flex-shrink: 0;
 }
 
 .nav-logo {
@@ -177,11 +260,13 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: var(--space-xs);
+  flex-wrap: nowrap;
+  min-width: 0;
 }
 
 .nav-link {
   padding: var(--space-sm) var(--space-lg);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 500;
   color: var(--color-text-muted);
   border-radius: var(--radius-md);
@@ -206,6 +291,7 @@ a:focus-visible {
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .nav-lang-desktop {
